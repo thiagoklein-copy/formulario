@@ -116,7 +116,6 @@ export default function BriefingStepPage() {
                 <QuestionCheckbox label="Em quais canais voce ja tem conta ativa?" values={responses.canais_ativos} onChange={(value) => update("canais_ativos", value)} options={["Instagram", "YouTube", "TikTok", "Spotify (podcast)", "LinkedIn", "WhatsApp Business", "Telegram"]} error={hasError("canais_ativos")} />
                 <QuestionRadio label="Qual canal voce quer priorizar primeiro?" value={responses.canal_principal} onChange={(value) => update("canal_principal", value)} options={["Instagram (hub principal)", "YouTube (conteudo longo)", "TikTok (jovem cristao)", "Todos ao mesmo tempo", "Nao sei - me orientem"]} error={hasError("canal_principal")} />
                 <QuestionRadio label="Meta de seguidores em 6 meses?" value={responses.meta_seguidores} onChange={(value) => update("meta_seguidores", value)} options={["1.000 a 5.000", "5.000 a 20.000", "20.000 a 50.000", "Mais de 50.000", "Numero nao e prioridade"]} error={hasError("meta_seguidores")} />
-                <QuestionRadio label="Voce tem equipe para producao de conteudo?" value={responses.estrutura_equipe} onChange={(value) => update("estrutura_equipe", value)} options={["Sim, equipe estruturada", "Tenho 1 pessoa de apoio", "So eu por enquanto", "Vamos contratar com o projeto"]} error={hasError("estrutura_equipe")} />
               </>
             )}
             {step === 6 && (
