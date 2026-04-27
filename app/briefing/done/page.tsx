@@ -9,7 +9,6 @@ export default function BriefingDonePage() {
         Rafael, recebemos todas as suas respostas. Agora é com a gente - em breve
         entraremos em contato para dar os próximos passos do DNA do Reino.
       </p>
-      <p className="mt-10 text-sm uppercase tracking-[0.2em] text-[#BA7517]">Agência DNA Growth</p>
     </main>
   );
 }
