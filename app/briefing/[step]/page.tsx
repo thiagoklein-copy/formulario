@@ -124,7 +124,6 @@ export default function BriefingStepPage() {
                 <QuestionRadio label="Qual e o ticket medio do produto principal?" value={responses.ticket_medio} onChange={(value) => update("ticket_medio", value)} options={["Ate R$ 500", "R$ 500 a R$ 2.000", "R$ 2.000 a R$ 5.000", "R$ 5.000 a R$ 15.000", "Acima de R$ 15.000"]} error={hasError("ticket_medio")} />
                 <QuestionTextarea label="Ja tem empresas parceiras em mente?" value={responses.empresas_parceiras} onChange={(value) => update("empresas_parceiras", value)} />
                 <QuestionRadio label="Meta de faturamento em 12 meses?" value={responses.meta_faturamento} onChange={(value) => update("meta_faturamento", value)} options={["Ate R$ 100 mil", "R$ 100k a R$ 300k", "R$ 300k a R$ 500k", "R$ 500k a R$ 1 milhao", "Mais de R$ 1 milhao"]} error={hasError("meta_faturamento")} />
-                <QuestionRadio label="Qual o prazo ideal para lancamento?" value={responses.prazo_lancamento} onChange={(value) => update("prazo_lancamento", value)} options={["Urgente - em ate 30 dias", "1 a 2 meses", "2 a 3 meses", "Sem pressa - quero fazer certo"]} error={hasError("prazo_lancamento")} />
               </>
             )}
             {step === 7 && (

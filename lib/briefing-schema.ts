@@ -94,7 +94,7 @@ export const requiredFieldsByStep: Record<number, Array<keyof BriefingResponse>>
   3: ["voz", "diferenciais", "tom_comunicacao"],
   4: ["temas_principais", "formatos_preferidos", "frequencia_conteudo", "estilo_video"],
   5: ["situacao_instagram", "canais_ativos", "canal_principal", "meta_seguidores"],
-  6: ["produtos_atuais", "ticket_medio", "meta_faturamento", "prazo_lancamento"],
+  6: ["produtos_atuais", "ticket_medio", "meta_faturamento"],
   7: ["cores_preferidas", "estilo_foto_video", "assinatura_marca"],
 };
 
