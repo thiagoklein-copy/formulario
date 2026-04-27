@@ -8,7 +8,7 @@ type NavigationButtonsProps = {
 export function NavigationButtons({
   onBack,
   onNext,
-  nextLabel = "Proxima etapa",
+  nextLabel = "Próxima etapa",
   disabled,
 }: NavigationButtonsProps) {
   return (

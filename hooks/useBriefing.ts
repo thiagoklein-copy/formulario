@@ -67,6 +67,41 @@ export function useBriefing() {
     );
   }, []);
 
+  const upsertBySession = useCallback(
+    async (payload: Partial<BriefingResponse> & { session_id: string }) => {
+      const { data: existing, error: selectError } = await supabase
+        .from("briefing_responses")
+        .select("id")
+        .eq("session_id", payload.session_id)
+        .maybeSingle();
+
+      if (selectError) {
+        console.error("Erro ao buscar sessao de briefing:", selectError.message);
+        return false;
+      }
+
+      if (existing?.id) {
+        const { error: updateError } = await supabase
+          .from("briefing_responses")
+          .update(payload)
+          .eq("id", existing.id);
+        if (updateError) {
+          console.error("Erro ao atualizar briefing:", updateError.message);
+          return false;
+        }
+        return true;
+      }
+
+      const { error: insertError } = await supabase.from("briefing_responses").insert(payload);
+      if (insertError) {
+        console.error("Erro ao inserir briefing:", insertError.message);
+        return false;
+      }
+      return true;
+    },
+    [supabase],
+  );
+
   const saveStep = useCallback(
     async (step: number, stepData: Partial<BriefingResponse>) => {
       if (!sessionId) return false;
@@ -82,33 +117,25 @@ export function useBriefing() {
         completed: false,
       };
 
-      const { error } = await supabase
-        .from("briefing_responses")
-        .upsert(payload, { onConflict: "session_id" });
-      return !error;
+      return upsertBySession(payload);
     },
-    [persistLocal, responses, sessionId, supabase],
+    [persistLocal, responses, sessionId, upsertBySession],
   );
 
   const markCompleted = useCallback(async () => {
     if (!sessionId) return false;
-    const { error } = await supabase
-      .from("briefing_responses")
-      .upsert(
-        {
-          ...responses,
-          session_id: sessionId,
-          current_step: 7,
-          completed: true,
-        },
-        { onConflict: "session_id" },
-      );
-    if (!error) {
+    const success = await upsertBySession({
+      ...responses,
+      session_id: sessionId,
+      current_step: 7,
+      completed: true,
+    });
+    if (success) {
       persistLocal(responses, 7);
       return true;
     }
     return false;
-  }, [persistLocal, responses, sessionId, supabase]);
+  }, [persistLocal, responses, sessionId, upsertBySession]);
 
   const validateStep = useCallback(
     (step: number) => {

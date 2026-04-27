@@ -10,7 +10,7 @@ const playfairDisplay = Playfair_Display({
 
 export const metadata: Metadata = {
   title: "DNA do Reino | Briefing",
-  description: "Formulario de briefing de onboarding da agencia.",
+  description: "Formulário de briefing de onboarding da agência.",
 };
 
 export default function RootLayout({

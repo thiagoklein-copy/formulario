@@ -99,11 +99,11 @@ export const requiredFieldsByStep: Record<number, Array<keyof BriefingResponse>>
 };
 
 export const stepMeta = {
-  1: { title: "Identidade: Quem e voce?", description: "Queremos entender sua historia antes de falar sobre o que voce faz. Essas informacoes sao a base de tudo." },
-  2: { title: "DNA do Reino: Seu metodo e proposito", description: "Agora queremos entender o DNA do Reino em profundidade - o que e, para quem e e qual transformacao ele entrega." },
-  3: { title: "Posicionamento: Como voce quer ser visto", description: "Seu posicionamento e a impressao que fica na cabeca das pessoas quando elas pensam em voce." },
-  4: { title: "Conteudo: Sua estrategia de conteudo", description: "Aqui vamos entender os temas, formatos e a frequencia que farao sentido para a sua rotina." },
-  5: { title: "Canais: Presenca digital", description: "Onde voce esta hoje e onde quer chegar. Vamos mapear sua presenca atual e as prioridades." },
-  6: { title: "Negocio: Produtos, precos e metas", description: "Para criar funis eficientes, precisamos entender o modelo de negocio e os numeros." },
-  7: { title: "Referencias: Identidade visual e marca", description: "Vamos definir a identidade visual e o estilo de comunicacao do DNA do Reino." },
+  1: { title: "Identidade: Quem é você?", description: "Queremos entender sua história antes de falar sobre o que você faz. Essas informações são a base de tudo." },
+  2: { title: "DNA do Reino: Seu método e propósito", description: "Agora queremos entender o DNA do Reino em profundidade - o que é, para quem é e qual transformação ele entrega." },
+  3: { title: "Posicionamento: Como você quer ser visto", description: "Seu posicionamento é a impressão que fica na cabeça das pessoas quando elas pensam em você." },
+  4: { title: "Conteúdo: Sua estratégia de conteúdo", description: "Aqui vamos entender os temas, formatos e a frequência que farão sentido para a sua rotina." },
+  5: { title: "Canais: Presença digital", description: "Onde você está hoje e onde quer chegar. Vamos mapear sua presença atual e as prioridades." },
+  6: { title: "Negócio: Produtos, preços e metas", description: "Para criar funis eficientes, precisamos entender o modelo de negócio e os números." },
+  7: { title: "Referências: Identidade visual e marca", description: "Vamos definir a identidade visual e o estilo de comunicação do DNA do Reino." },
 } as const;

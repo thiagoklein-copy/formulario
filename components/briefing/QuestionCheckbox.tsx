@@ -55,7 +55,7 @@ export function QuestionCheckbox({
       </div>
       {maxSelections ? (
         <p className="text-xs text-[#F5F4F0]/65">
-          Selecione ate {maxSelections} opcao(oes). {limitReached ? "Limite atingido." : ""}
+          Selecione até {maxSelections} opção(ões). {limitReached ? "Limite atingido." : ""}
         </p>
       ) : null}
       {error ? <p className="text-sm text-red-400">{error}</p> : null}
